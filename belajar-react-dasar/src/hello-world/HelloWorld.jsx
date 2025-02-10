@@ -1,7 +1,12 @@
+import "./HelloWorld.css"
+
 export default function HelloWorld(){
+    const props = {
+        text : "Hello World from spread sintax"
+    }
     return(
         <div>
-          <HeaderParagraph text="Hello World"/>
+          <HeaderParagraph {...props}/>
           <Paragraph/>
         </div>
     )
@@ -9,20 +14,13 @@ export default function HelloWorld(){
 
 function HeaderParagraph({text= "Lorem Ipsum sir dolor amet"}){
     return(
-        <h1 style= {{
-            color: "#4F4A41",
-            backgroundColor: "#88BDBC"
-        }}>{text.toUpperCase()}</h1>
+        <h1 className="title">{text.toUpperCase()}</h1>
     )
 }
 
 function Paragraph(){
     const text = "Belajar reactjs dari Programmer Zaman Now"
-    const style = {
-        color: "white",
-        backgroundColor: "#254E58"
-    }
     return(
-        <p style= {style}>{text.toLowerCase()}</p>
+        <p className="content">{text.toLowerCase()}</p>
     )
 }
